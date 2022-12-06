@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <!--name属性的值是实体类所在包-->
+        <package name="com.guoba.pojo"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED" >
+                <!--数据库连接信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://39.107.235.228:3306/db_1205?useSSL=false"/>
+                <property name="username" value="db_12051"/>
+                <property name="password" value="whPXBfPxTcEhRNbe1"/>
+<!--                <property name="driver" value="${jdbc.driver}"/>-->
+<!--                <property name="url" value="${jdbc.url}"/>-->
+<!--                <property name="username" value="${jdbc.username}"/>-->
+<!--                <property name="password" value="${jdbc.password}"/>-->
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+
+        <!--加载sql映射文件-->
+         <mapper resource="com/guoba/mapper/UserMapper.xml"/>
+        <!--Mapper代理方式-->
+<!--        <package name="com.guoba.mapper"/>-->
+
+    </mappers>
+
+</configuration>
